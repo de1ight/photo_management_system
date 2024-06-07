@@ -13,7 +13,7 @@ public class Album {
     @Column(name = "album_name")
     private String album_name;
     @Column(name = "first_p")
-    private long first_p;
+    private String first_p;
 
     @Column(name="p_num")
     private long p_num;
@@ -34,11 +34,11 @@ public class Album {
         this.album_name = album_name;
     }
 
-    public long getFirst_p() {
+    public String getFirst_p() {
         return first_p;
     }
 
-    public void setFirst_p(long first_p) {
+    public void setFirst_p(String first_p) {
         this.first_p = first_p;
     }
 

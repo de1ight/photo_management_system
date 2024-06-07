@@ -14,18 +14,22 @@ public class AlbumServiceImpl implements AlbumService{
     @Autowired
     private AlbumRepository albumRepository;
 
+
+    //查询所有的相册
     public List<Album> getAllAlbums(){
         return albumRepository.findAll();
     }
-
+    //根据id查相册
     public Optional<Album> getAlbumById(Long id) {
         return albumRepository.findById(id);
     }
 
+    //新建相册
     public Album createAlbum(Album album) {
         return albumRepository.save(album);
     }
 
+    //更新相册
     public Album updateAlbum(Long id, Album albumDetails) {
         Album album = albumRepository.findById(id).orElseThrow(() -> new RuntimeException("Album not found"));
         album.setAlbum_name(albumDetails.getAlbum_name());
@@ -34,6 +38,7 @@ public class AlbumServiceImpl implements AlbumService{
         return albumRepository.save(album);
     }
 
+    //删除相册
     public void deleteAlbum(Long id) {
         albumRepository.deleteById(id);
     }

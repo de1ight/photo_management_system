@@ -1,45 +1,43 @@
 package com.example.demo.dao;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "photo")
 public class Photo {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private long id;
 
     @Column(name = "album_id")
-    private int album_id;
+    private long album_id;
 
-    @Column(name = "photo_data")
-    private String photo_data;
+    @Column(name = "photo_url")
+    private String photo_url;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getAlbum_id() {
+    public long getAlbum_id() {
         return album_id;
     }
 
-    public void setAlbum_id(int album_id) {
+    public void setAlbum_id(long album_id) {
         this.album_id = album_id;
     }
 
-    public String getPhoto_data() {
-        return photo_data;
+    public String getPhoto_url() {
+        return photo_url;
     }
 
-    public void setPhoto_data(String photo_data) {
-        this.photo_data = photo_data;
+    public void setPhoto_url(String photo_url) {
+        this.photo_url = photo_url;
     }
 }
